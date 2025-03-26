@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=Pixelify+Sans:wght@400..700&display=swap');
+
+
+body {
+    font-family: "Itim", serif;
+    display: flex;
+    overflow: hidden;
+    height:330px;
+    width:264px;
+}
+
+/* Main To-Do Container */
+.frame1 {
+    -webkit-app-region: drag;
+    background-image: url("file:///D:/PROJECTS/todo/static/images/shop.jpg");
+    background-size: 264px 330px;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+.frame1:hover {
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* To-Do Title */
+.to-do {
+    text-align:center;
+    font-size:30px;
+    font-family:"Itim", serif;
+    line-height:auto;
+    border-style:hidden;
+    left:15px;
+    top:20px;
+    position:absolute;
+    width: 100px;
+    height:40px ;
+    background-color: rgba(0, 0, 0);
+    color: white; 
+}
+
+.close{
+    -webkit-app-region: no-drag;
+    margin-top: 1px;
+    margin-left: 217px;
+    background-color: #acdbc9;
+    border: 3px solid #132a13;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+}
+
+.close:hover{
+    background-color: #6fa0a0;
+}
+
+/* Background Stars */
+.bg-container{
+    position: absolute;
+    height:250px;
+    width:220px;
+    -webkit-app-region: no-drag;
+    background-color: rgba(0, 0, 0, 0.6);
+    left:22px;
+    top:80px;   
+}
+
+/* Task List Container */
+#task-container {
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    margin-left: 5px;
+    max-width: 220px;
+    max-height: 196px;
+    overflow-y: auto;
+    margin-top: 10px; /* Adjusted to fit inside the green background */
+}
+
+/* Scrollbar Customization */
+#task-container::-webkit-scrollbar {
+    width: 5px;
+}
+
+#task-container::-webkit-scrollbar-thumb {
+    border-radius: 5px;
+    background-color: #90c1e2
+}
+
+/* Checked state */
+.task-checkbox:checked {
+    background: #fbfbfb;
+    border: 2px solid #93c093;
+    box-shadow: 0 0 8px #9ec19e;
+}
+
+/* Add a checkmark */
+.task-checkbox:checked::after {
+    content: "✔";
+    font-size: 14px;
+    color: rgb(102, 61, 45);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Individual Task */
+.task {
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+/* Checkbox Styling */
+.task-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer; 
+    accent-color: #6da76d;
+    border: 2px solid #85a985;
+    border-radius: 50%;
+    position: relative;
+    background: white;
+}
+
+/* Task Input */
+.task-input {
+    flex: 1;
+    padding: 4px;
+    margin:auto;
+    border: none;
+    border-radius: 5px;
+    font-family: "Itim", serif;
+    font-size: 14px;
+    max-width: 132px;
+    color: #000000;
+    outline: none;
+}
+
+.task-input::placeholder {
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.task-checkbox:checked + .task-input {
+    text-decoration: line-through black 2px solid;
+}
+
+/* Delete Task Button */
+.delete-task {
+    background: none;
+    border: none;
+    color: rgb(223, 240, 177);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Button Placement */
+.add-task {
+    background: #b4dfae;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 8px;
+    width: 75px;
+    border: 2px solid #000000;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+    margin-top: 10px;
+    font-family: "Itim", serif;
+    z-index: +1;
+}
+
+.add-task:hover, .x:hover {
+    background: #92ac92;
+}r
+
+/* Button Alignment */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
